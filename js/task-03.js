@@ -12,3 +12,26 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryEl = document.querySelector(".gallery");
+
+// const makeCard = images
+//     .map((image) => `<li class="gallery_item"><img class="gallery_item__img"
+// src="${image.url}" alt="${image.alt}"></li>`).join("");
+// console.log(makeCard);
+// galleryEl.insertAdjacentHTML("afterbegin", makeCard);
+// console.log(galleryEl);
+
+
+// ===== варіант з функцією ======
+
+function makeCards(arr, gallery) {
+   const makeCard = arr
+    .map(({url, alt}) => `<li class="gallery_item"><img class="gallery_item__img"
+src="${url}" alt="${alt}" width=400px heigth = 600px></li>`).join("");
+gallery.insertAdjacentHTML("afterbegin", makeCard)    
+    
+}
+makeCards(images, galleryEl);
+console.log(galleryEl);
+
